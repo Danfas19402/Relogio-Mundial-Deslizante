@@ -1,145 +1,42 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!doctype html>
+<html lang="pt-BR">
 
-body {
-  font-family: "Poppins", sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.3s, color 0.3s;
-}
+<!-- Cabeça -->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Relógio Mundial (Deslizante)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-/* Temas */
-:root {
-  --bg: #ffffff;
-  --text: #1a1a1a;
-  --card-bg: #f3f3f3;
-  --border: #dcdcdc;
-  --shadow: rgba(0, 0, 0, 0.1);
-}
+<!-- Corpo-->
+<body>
 
-body.dark {
-  --bg: #121212;
-  --text: #f5f5f5;
-  --card-bg: #1e1e1e;
-  --border: #333;
-  --shadow: rgba(255, 255, 255, 0.07);
-}
+    <!-- 1º Algoritmo - Título -->
+  <main class="app">
+    <h1>Relógio Mundial (Deslizante)</h1>
 
-/* App */
-.app {
-  max-width: 900px;
-  margin: auto;
-  padding: 40px 20px;
-  text-align: center;
-}
+    <!-- Botão de tema -->
+    <button id="theme-toggle" class="theme-btn">🌓</button>
 
-h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
+    <!-- Slider -->
+    <div class="slider-wrap">
+      <button class="nav prev" aria-label="Anterior">‹</button>
 
-/* Botão tema */
-.theme-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 22px;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  padding: 10px 14px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 4px 10px var(--shadow);
-}
+      <div class="slider-viewport" id="viewport">
+        <div class="slider" id="slider"></div>
+      </div>
 
-.theme-btn:hover {
-  transform: scale(1.05);
-}
+      <button class="nav next" aria-label="Próximo">›</button>
+    </div>
 
-/* Slider */
-.slider-wrap {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
+    <div class="dots" id="dots"></div>
+  </main>
 
-.slider-viewport {
-  width: 100%;
-  overflow: hidden;
-}
+  <script src="script.js"></script>
+</body>
+</html>
 
-.slider {
-  display: flex;
-  transition: transform 0.45s ease;
-}
 
-/* Card */
-.card {
-  min-width: 260px;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  margin: 0 10px;
-  padding: 20px;
-  border-radius: 14px;
-  box-shadow: 0 4px 12px var(--shadow);
-  text-align: center;
-}
 
-.card h2 {
-  margin-bottom: 6px;
-  font-size: 20px;
-}
-
-.time {
-  font-size: 32px;
-  font-weight: bold;
-}
-
-/* Navegação */
-.nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 32px;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  padding: 6px 13px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.2s;
-
-}
-
-.nav:hover {
-  transform: scale(1.15) translateY(-50%);
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
-
-/* Dots */
-.dots {
-  margin-top: 20px;
-}
-
-.dots span {
-  height: 12px;
-  width: 12px;
-  display: inline-block;
-  background: var(--border);
-  margin: 6px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.dots .active {
-  background: var(--text);
-  transform: scale(1.3);
-}
 
